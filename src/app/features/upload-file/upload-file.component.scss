@@ -1,0 +1,46 @@
+.addFile-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  padding-left: 1rem;
+  padding-top: 0.5rem;
+}
+
+.upload-info {
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.no-bullets {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.card .p-button {
+  background-color: #8dc4e1;
+  color: white;
+}
+.p-card .p-card-footer {
+  padding: 0;
+}
+
+.full-width-btn {
+  width: 100%;
+  display: grid;
+}
+
+.requirements-item {
+  margin-top: 0.25rem;
+}
+
+.title-textfield {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.title-label {
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+}

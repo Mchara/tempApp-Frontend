@@ -1,0 +1,64 @@
+<p-toast />
+<div class="card">
+  <p-card
+    header="Upload Climate Data"
+    subheader="Select a file containing climate data to visualize"
+    [style]="{ width: '360px' }"
+  >
+    <ng-template pTemplate="header">
+      <div class="addFile-container">
+        <p-button
+          icon="pi pi-plus"
+          type="button"
+          [rounded]="true"
+          [text]="true"
+          [raised]="true"
+          (onClick)="fileInput.click()"
+        >
+          <input
+            #fileInput
+            type="file"
+            accept=".csv"
+            (change)="onFileInputChange($event)"
+            style="display: none"
+          />
+        </p-button>
+
+        <label>Choose a file</label>
+      </div>
+    </ng-template>
+    <div class="upload-info">
+      <span>Please make sure you upload a <strong>.csv</strong> file.</span>
+      <span>The file should follow this structure:</span>
+
+      <ul class="no-bullets">
+        <li><strong>Column 1:</strong> Product Code</li>
+        <li class="requirements-item">
+          <strong>Column 2:</strong> BOM Station Number
+        </li>
+        <li class="requirements-item"><strong>Column 3:</strong> Year</li>
+        <li class="requirements-item">
+          <strong>Column 4-15:</strong> Monthly Max Temperatures (January -
+          December) in °C
+        </li>
+        <li class="requirements-item">
+          <strong>Column 16:</strong> Annual Mean Max Temperature in °C
+        </li>
+      </ul>
+
+      <div class="title-textfield">
+        <label for="displayName" class="title-label">Title</label>
+        <input pInputText id="displayName" [(ngModel)]="title" [disabled]="true" />
+      </div>
+    </div>
+
+    <ng-template pTemplate="footer">
+      <p-button
+        label="Upload"
+        class="full-width-btn"
+        [disabled]="!dataFile"
+        (onClick)="sendDataFile()"
+      />
+    </ng-template>
+  </p-card>
+</div>

@@ -1,0 +1,32 @@
+<nav id="nav_bar">
+  <div class="menuBar">
+    <div class="logo-container">
+      <img
+        src="../../../assets/celsius.svg"
+        alt="CelciousApp"
+        width="120"
+        height="90"
+      />
+    </div>
+    <div class="fullMenu">
+      <p-button
+        label="Monthly View"
+        (click)="onMonthlyViewChange(true)"
+        [ngClass]="{
+          'active-button': isMonthActive,
+          'inactive-button': !isMonthActive
+        }"
+      >
+      </p-button>
+      <p-button
+        label="Yearly View"
+        (click)="onMonthlyViewChange(false)"
+        [ngClass]="{
+          'active-button': !isMonthActive,
+          'inactive-button': isMonthActive
+        }"
+      >
+      </p-button>
+    </div>
+  </div>
+</nav>

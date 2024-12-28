@@ -1,0 +1,33 @@
+<section class="homepage-container">
+  <app-upload-file
+    (plotTemplates)="isPlottingScreenActive = $event"
+    (plotData)="onPlotDataUpdate($event)"
+    (areThereDiscardedData)="areDiscardedData = $event"
+  ></app-upload-file>
+  <div class="background-slideshow" *ngIf="!isPlottingScreenActive">
+    <div
+      class="slide"
+      style="background-image: url('/assets/analytics-1.jpg')"
+    ></div>
+    <div
+      class="slide"
+      style="background-image: url('/assets/analytics-2.jpg')"
+    ></div>
+    <div
+      class="slide"
+      style="background-image: url('/assets/analytics-3.png')"
+    ></div>
+    <div
+      class="slide"
+      style="background-image: url('/assets/analytics-4.jpg')"
+    ></div>
+    <div
+      class="slide"
+      style="background-image: url('/assets/analytics-5.png')"
+    ></div>
+  </div>
+
+  <div *ngIf="isPlottingScreenActive">
+    <app-plotting-screen [plotData]="plotData" [plotType]="viewMode"></app-plotting-screen>
+  </div>
+</section>

@@ -1,0 +1,7 @@
+<p-toast />
+<div *ngIf="!isLoading" class="plot-image">
+  <img [src]="plotImageUrl" alt="Temperature Plot" width="600" height="400" />
+</div>
+<ng-template *ngIf="isLoading">
+  <app-custom-loader></app-custom-loader>
+</ng-template>
